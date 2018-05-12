@@ -1,0 +1,21 @@
+.example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+
+  .brand-logo {
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
+    padding-left: 15px;
+  }
+
+  .main-wrapper {
+    background: url("../assets/background.jpg") no-repeat fixed;
+    min-height: 100vh; 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
