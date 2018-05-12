@@ -4,10 +4,20 @@
   <!-- This fills the remaining space of the current row -->
   <span class="example-fill-remaining-space"></span>
 
-  <button class="login-btn" mat-button>Вхід</button>
+  <button *ngIf="!auth.isAuthenticated()" class="login-btn" (click)="auth.login()" mat-button>Вхід</button>
+  <button class="logout-btn" *ngIf="auth.isAuthenticated()" mat-button (click)="auth.logout()">
+    Вихід
+  </button>
 </mat-toolbar>
-<div class="main-wrapper">
+<div class="main-wrapper" *ngIf="!auth.isAuthenticated()">
   <div class="start-text">
     <h2>Перевір свої знання</h2>
+  </div>
+</div>
+
+<div class="app-wrapper">
+  <div class="container">
+    <router-outlet></router-outlet>
+  <!-- Routed views go here -->
   </div>
 </div>
